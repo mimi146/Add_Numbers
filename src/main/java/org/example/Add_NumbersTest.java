@@ -12,6 +12,8 @@ public class Add_NumbersTest {
 
         Add_Numbers caller = new Add_Numbers();
 
-        assertEquals(caller.sum("123"),6);
+        assertEquals(caller.Sum("1\n2,3"),6);
+        assertEquals(caller.Sum(""),0);
+        assertEquals(caller.Sum("\"//;\\n1;2\""),3);
     }
 }
