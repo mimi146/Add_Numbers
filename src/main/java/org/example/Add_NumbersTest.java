@@ -16,8 +16,8 @@ public class Add_NumbersTest {
         assertEquals(caller.Add("\"//;\\n1;2\""),3);
 
         try{
-           caller.Add("-3d3f3");
-
+           caller.Add("3d3f-3");
+           fail();// explicitly   making fail if exception not occurred
         }catch(RuntimeException e) {
 
             String messgae = e.getMessage();
