@@ -2,8 +2,7 @@ package org.example;
 
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertSame;
+import static org.junit.Assert.*;
 
 public class Add_NumbersTest {
 
@@ -12,8 +11,18 @@ public class Add_NumbersTest {
 
         Add_Numbers caller = new Add_Numbers();
 
-        assertEquals(caller.Sum("1\n2,3"),6);
-        assertEquals(caller.Sum(""),0);
-        assertEquals(caller.Sum("\"//;\\n1;2\""),3);
+        assertEquals(caller.Add("1\n2,3"),6);
+        assertEquals(caller.Add(""),0);
+        assertEquals(caller.Add("\"//;\\n1;2\""),3);
+
+        try{
+           caller.Add("-3d3f3");
+
+        }catch(RuntimeException e) {
+
+            String messgae = e.getMessage();
+            System.out.printf(messgae);
+        }
+
     }
 }
